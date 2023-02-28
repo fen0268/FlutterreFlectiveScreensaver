@@ -98,10 +98,10 @@ class _FlutterReflectiveScreensaverState
     deviceLength = MediaQuery.of(context).size;
 
     /// ランダムで デバイスの縦横の値 × 0.8 の値 を取得
-    final randomWidth = deviceLength.width * 0.1 * Random().nextDouble() +
-        deviceLength.width * 0.8;
-    final randomHeight = deviceLength.height * 0.1 +
-        Random().nextDouble() * deviceLength.height * 0.8;
+    var randomWidth = deviceLength.width * 0.1 * Random().nextDouble() +
+        deviceLength.width * 0.6;
+    var randomHeight = deviceLength.height * 0.1 +
+        Random().nextDouble() * deviceLength.height * 0.6;
 
     location = Offset(randomWidth, randomHeight);
     await Future.delayed(const Duration(milliseconds: 50));
