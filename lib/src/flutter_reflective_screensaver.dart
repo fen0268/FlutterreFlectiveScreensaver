@@ -22,7 +22,7 @@ class _FlutterReflectiveScreensaverState
   GlobalKey widgetKey = GlobalKey();
   late Size deviceLength;
   late Size widgetSize;
-  late Offset location;
+  var location = const Offset(100, 100);
   late var vector = vectors(Random().nextInt(4));
 
   Offset vectors(int num) {
@@ -96,8 +96,17 @@ class _FlutterReflectiveScreensaverState
   void didChangeDependencies() async {
     super.didChangeDependencies();
     deviceLength = MediaQuery.of(context).size;
-    getPosition();
+
+    /// ランダムで デバイスの縦横の値 × 0.8 の値 を取得
+    final randomWidth = deviceLength.width * 0.1 * Random().nextDouble() +
+        deviceLength.width * 0.8;
+    final randomHeight = deviceLength.height * 0.1 +
+        Random().nextDouble() * deviceLength.height * 0.8;
+
+    location = Offset(randomWidth, randomHeight);
     await Future.delayed(const Duration(milliseconds: 50));
+    getPosition();
+    addPosition();
   }
 
   @override
@@ -105,8 +114,8 @@ class _FlutterReflectiveScreensaverState
     return Stack(
       children: [
         Positioned(
-          top: location.dx,
-          left: location.dy,
+          top: location.dy,
+          left: location.dx,
           child: Container(
             key: widgetKey,
             child: widget.child,
