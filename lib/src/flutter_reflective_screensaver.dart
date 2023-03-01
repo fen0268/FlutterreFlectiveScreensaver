@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class FlutterReflectiveScreensaver extends StatefulWidget {
   const FlutterReflectiveScreensaver(
-      {super.key, required this.child, this.backgroundColor, this.speed = 4.0});
+      {super.key, required this.child, this.backgroundColor, this.speed = 4});
 
   final Widget child;
 
