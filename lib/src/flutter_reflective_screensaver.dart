@@ -25,6 +25,11 @@ class _FlutterReflectiveScreensaverState
   var location = const Offset(100, 100);
   late var vector = vectors(Random().nextInt(4));
 
+  @override
+  void initState() async {
+    super.initState();
+  }
+
   Offset vectors(int num) {
     if (num == 0) {
       return Offset(widget.speed, -widget.speed);
