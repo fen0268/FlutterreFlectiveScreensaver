@@ -116,6 +116,7 @@ class _FlutterReflectiveScreensaverState
 
   @override
   Widget build(BuildContext context) {
+    assert(widget.speed <= 0 || widget.speed >= 20);
     return Stack(
       children: [
         Positioned(

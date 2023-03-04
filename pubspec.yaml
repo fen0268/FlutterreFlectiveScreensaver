@@ -1,6 +1,6 @@
 name: flutter_reflective_screensaver
 description: This package mimics the standby animation of a Digital Versatile Disk
-version: 0.0.10
+version: 0.0.11
 homepage: https://github.com/fen0268/FlutterreFlectiveScreensaver
 
 environment:
