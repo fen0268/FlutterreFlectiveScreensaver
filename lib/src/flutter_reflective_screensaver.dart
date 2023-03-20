@@ -20,7 +20,11 @@ class FlutterReflectiveScreensaver extends StatefulWidget {
 class _FlutterReflectiveScreensaverState
     extends State<FlutterReflectiveScreensaver> {
   GlobalKey widgetKey = GlobalKey();
+
+  /// device サイズ
   late Size deviceLength;
+
+  /// widget サイズ
   late Size widgetSize;
   var location = const Offset(100, 100);
   late var vector = vectors(Random().nextInt(4));
@@ -90,7 +94,7 @@ class _FlutterReflectiveScreensaverState
         setState(() {});
         vector = vectors(2);
       }
-      await Future.delayed(const Duration(milliseconds: 10));
+      await Future.delayed(const Duration(milliseconds: 17));
       setState(() {
         location += vector;
       });
