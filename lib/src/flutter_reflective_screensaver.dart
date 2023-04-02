@@ -26,6 +26,7 @@ class _FlutterReflectiveScreensaverState
 
   /// widget サイズ
   late Size widgetSize;
+
   var location = const Offset(100, 100);
   late var vector = vectors(Random().nextInt(4));
 
